@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "text-primary-12")}>
+      <body className={clsx(inter.className, "bg-primary-4 text-primary-12")}>
         <Providers>
           <Nav />
           {children}
