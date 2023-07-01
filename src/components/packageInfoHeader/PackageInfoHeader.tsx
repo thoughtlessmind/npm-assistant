@@ -18,13 +18,13 @@ const PackageInfoHeader = (props: PackageInfoHeaderProps) => {
         <p>{packageInfo.description}</p>
         <div className="border border-l-2" />
         <div className="flex items-center gap-4">
-          <div>
+          <div className="tooltip" data-tip="NPM">
             <FaNpm className={twMerge(iconClassName, "text-3xl")} />
           </div>
-          <div>
+          <div className="tooltip" data-tip="Website">
             <FaLink className={iconClassName} />
           </div>
-          <div>
+          <div className="tooltip" data-tip="Github">
             <FaGithub className={iconClassName} />
           </div>
         </div>
