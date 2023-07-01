@@ -3,46 +3,51 @@
 @tailwind utilities;
 
 :root {
-    --primary1: hsl(193, 100%, 98.8%);
-    --primary2: hsl(193, 100%, 97.3%);
-    --primary3: hsl(193, 99.0%, 94.7%);
-    --primary4: hsl(193, 91.4%, 91.4%);
-    --primary5: hsl(194, 82.0%, 86.6%);
-    --primary6: hsl(194, 74.1%, 79.5%);
-    --primary7: hsl(194, 72.3%, 69.6%);
-    --primary8: hsl(193, 77.9%, 53.9%);
-    --primary9: hsl(193, 98.0%, 70.0%);
-    --primary10: hsl(193, 87.0%, 66.5%);
-    --primary11: hsl(195, 100%, 31.5%);
-    --primary12: hsl(195, 100%, 13.0%);
+  --primary1: hsl(193, 100%, 98.8%);
+  --primary2: hsl(193, 100%, 97.3%);
+  --primary3: hsl(193, 99%, 94.7%);
+  --primary4: hsl(193, 91.4%, 91.4%);
+  --primary5: hsl(194, 82%, 86.6%);
+  --primary6: hsl(194, 74.1%, 79.5%);
+  --primary7: hsl(194, 72.3%, 69.6%);
+  --primary8: hsl(193, 77.9%, 53.9%);
+  --primary9: hsl(193, 98%, 70%);
+  --primary10: hsl(193, 87%, 66.5%);
+  --primary11: hsl(195, 100%, 31.5%);
+  --primary12: hsl(195, 100%, 13%);
 }
 
 html[data-theme="light"] {
-    --primary1: hsl(193, 100%, 98.8%);
-    --primary2: hsl(193, 100%, 97.3%);
-    --primary3: hsl(193, 99.0%, 94.7%);
-    --primary4: hsl(193, 91.4%, 91.4%);
-    --primary5: hsl(194, 82.0%, 86.6%);
-    --primary6: hsl(194, 74.1%, 79.5%);
-    --primary7: hsl(194, 72.3%, 69.6%);
-    --primary8: hsl(193, 77.9%, 53.9%);
-    --primary9: hsl(193, 98.0%, 70.0%);
-    --primary10: hsl(193, 87.0%, 66.5%);
-    --primary11: hsl(195, 100%, 31.5%);
-    --primary12: hsl(195, 100%, 13.0%);
+  --primary1: hsl(193, 100%, 98.8%);
+  --primary2: hsl(193, 100%, 97.3%);
+  --primary3: hsl(193, 99%, 94.7%);
+  --primary4: hsl(193, 91.4%, 91.4%);
+  --primary5: hsl(194, 82%, 86.6%);
+  --primary6: hsl(194, 74.1%, 79.5%);
+  --primary7: hsl(194, 72.3%, 69.6%);
+  --primary8: hsl(193, 77.9%, 53.9%);
+  --primary9: hsl(193, 98%, 70%);
+  --primary10: hsl(193, 87%, 66.5%);
+  --primary11: hsl(195, 100%, 31.5%);
+  --primary12: hsl(195, 100%, 13%);
 }
 
 html[data-theme="dark"] {
-      --primary1: hsl(205, 45.0%, 8.6%);
-      --primary2: hsl(202, 71.4%, 9.6%);
-      --primary3: hsl(201, 74.6%, 12.2%);
-      --primary4: hsl(201, 77.4%, 14.4%);
-      --primary5: hsl(200, 80.3%, 16.5%);
-      --primary6: hsl(200, 84.1%, 18.9%);
-      --primary7: hsl(199, 90.2%, 22.1%);
-      --primary8: hsl(198, 100%, 26.1%);
-      --primary9: hsl(193, 98.0%, 70.0%);
-      --primary10: hsl(192, 100%, 77.0%);
-      --primary11: hsl(192, 85.0%, 55.8%);
-      --primary12: hsl(198, 98.0%, 95.8%);
-  }
+  --primary1: hsl(205, 45%, 8.6%);
+  --primary2: hsl(202, 71.4%, 9.6%);
+  --primary3: hsl(201, 74.6%, 12.2%);
+  --primary4: hsl(201, 77.4%, 14.4%);
+  --primary5: hsl(200, 80.3%, 16.5%);
+  --primary6: hsl(200, 84.1%, 18.9%);
+  --primary7: hsl(199, 90.2%, 22.1%);
+  --primary8: hsl(198, 100%, 26.1%);
+  --primary9: hsl(193, 98%, 70%);
+  --primary10: hsl(192, 100%, 77%);
+  --primary11: hsl(192, 85%, 55.8%);
+  --primary12: hsl(198, 98%, 95.8%);
+}
+
+::selection {
+  background-color: var(--primary11);
+  color: var(--primary2);
+}
