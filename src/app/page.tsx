@@ -7,12 +7,12 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-primary-10">
+    <main className="flex min-h-screen flex-col items-center bg-primary-10 p-24">
       <h1>Hey Npm-assistant</h1>
-      <div className="flex items-center justify-center flex-grow w-full">
+      <div className="flex w-full flex-grow items-center justify-center">
         <input
           placeholder="Search any npm package..."
-          className="border rounded px-4 py-2 w-1/2"
+          className="w-1/2 rounded border px-4 py-2"
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
