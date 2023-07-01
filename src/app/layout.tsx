@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Nav from "../components/nav/Nav";
 import clsx from "clsx";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(inter.className, "text-primary-12")}>
-        <Nav />
-        {children}
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
       </body>
     </html>
   );
