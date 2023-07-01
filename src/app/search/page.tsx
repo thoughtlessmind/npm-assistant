@@ -1,20 +1,53 @@
-const Search = ()=>{
-    return <div className="flex min-h-screen flex-col  p-24 bg-primary-3">
-        <div id="multiple-package-search-container">
-            <input placeholder="search your package" className="p-2 rounded-md w-60" />
-        </div>
-        <div id="meta-data-container" className="flex flex-row gap-3 mt-4">
-            <div className="w-96 h-96 bg-primary-10">
+"use client";
+import { useEffect, useState } from "react";
+import { Object, SearchedPackageDto } from "../../types/searchedPackageDto";
+import { BsTagsFill } from "react-icons/Bs";
 
-            </div>
-            <div className="w-96 h-96 bg-primary-10">
+const Search = () => {
+  const [suggestedPackages, setSuggestedPackages] =
+    useState<SearchedPackageDto | null>(null);
 
+  const fetchPackageList = async (searchString: string) => {
+    const dynamicData = await fetch(
+      `https://registry.npmjs.org/-/v1/search?text=${searchString}`,
+      { cache: "no-store" }
+    );
+    const result = await dynamicData.json();
+    if (!!result) {
+      setSuggestedPackages(result);
+    }
+  };
+  useEffect(() => {
+    const urlSearchParams = window.location.search.substring(1).split("=")[1];
+    if (!!urlSearchParams) {
+      fetchPackageList(urlSearchParams);
+    }
+  }, []);
+
+  return (
+    <div className="px-24 py-10 bg-primary-3">
+      {!suggestedPackages ? (
+        <h1 className="text-red">No Package received</h1>
+      ) : (
+        suggestedPackages.objects.map((data: Object) => (
+          <div
+            className="flex flex-col p-10 shadow-md mb-5 rounded-lg cursor-pointer bg-primary-5"
+            key={data.package.name}
+          >
+            <div id="search-package-suggestions-container">
+              <h1>{data.package.name} ( {data.package.version} )</h1>
+              <h6>{data.package.description}</h6>
+              <h6 className="flex flex-row gap-3 items-center">
+                <BsTagsFill />
+                {data.package.keywords?.join(",")}
+              </h6>
+              {/* <h6>Updated Last year by {data.package.}</h6> */}
             </div>
-        </div>
-        <div id="info-data-container" className="flex mt-4">
-            <h1>Git information will be shown here</h1>
-        </div>
+          </div>
+        ))
+      )}
     </div>
-}
+  );
+};
 
 export default Search;
